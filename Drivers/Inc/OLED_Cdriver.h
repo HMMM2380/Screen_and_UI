@@ -6,14 +6,14 @@ extern "C"
 {
 #endif
 
-#include "font.h"
+#include "fonts.h"
 #include <stddef.h>
 #include <stdint.h>
 #include <string.h>
 
 struct OLED
 {
-	uint8_t* _Gbuf;
+	uint8_t *_Gbuf;
 	size_t   _Gbuf_size;
 	size_t   x_len;
 	size_t   y_len;
@@ -22,7 +22,7 @@ struct OLED
 	BCD_16bit_t bcd_16bit;
 #endif
 
-	int (*Send) (void* Gbuf, size_t size);
+	int (*Send) (void *Gbuf, size_t size);
 };
 
 enum OLED_COLOR
@@ -32,7 +32,7 @@ enum OLED_COLOR
 };
 
 static inline const int
-OLED_range_isok (struct OLED* oled, const uint16_t x1, const uint16_t x2,
+OLED_range_isok (struct OLED *oled, const uint16_t x1, const uint16_t x2,
                  const uint16_t y1, const uint16_t y2)
 {
 	if (!oled || x1 >= oled->x_len || x2 >= oled->x_len
@@ -43,10 +43,11 @@ OLED_range_isok (struct OLED* oled, const uint16_t x1, const uint16_t x2,
 }
 
 static inline const int
-OLED_init (struct OLED* oled, uint8_t* init_cmd, size_t icmd_len, size_t x_len,
-           size_t y_len, uint8_t* Gbuf, size_t gbuf_size,
-           int (*send_func) (void*, size_t))
+OLED_init (struct OLED *oled, uint8_t *init_cmd, size_t icmd_len, size_t x_len,
+           size_t y_len, uint8_t *Gbuf, int (*send_func) (void *, size_t))
 {
+	const size_t gbuf_size = x_len * (y_len >> 3);
+
 	memset (oled, 0, sizeof (struct OLED));
 	memset (Gbuf, 0, gbuf_size);
 
@@ -56,24 +57,25 @@ OLED_init (struct OLED* oled, uint8_t* init_cmd, size_t icmd_len, size_t x_len,
 	oled->y_len      = y_len;
 	oled->Send       = send_func;
 
+	if (!init_cmd || !icmd_len)
+		return 0;
 	return oled->Send (init_cmd, icmd_len);
 }
 
 static inline const int
-OLED_flush_all (struct OLED* oled)
+OLED_flush_all (struct OLED *oled)
 {
 	return oled->Send (oled->_Gbuf, oled->_Gbuf_size);
 }
 
-static inline const int
-OLED_clear_all (struct OLED* oled)
+static inline void
+OLED_clear_all (struct OLED *oled)
 {
 	memset (oled->_Gbuf, 0, oled->_Gbuf_size);
-	return OLED_flush_all (oled);
 }
 
 static inline const int
-OLED_pixel (struct OLED* oled, const uint16_t x, const uint16_t y,
+OLED_pixel (struct OLED *oled, const uint16_t x, const uint16_t y,
             enum OLED_COLOR color)
 {
 	if (!OLED_range_isok (oled, x, 0, y, 0))
@@ -91,7 +93,7 @@ OLED_pixel (struct OLED* oled, const uint16_t x, const uint16_t y,
 }
 
 static inline const int
-OLED_draw_vline (struct OLED* oled, const uint16_t x, const uint16_t y1,
+OLED_draw_vline (struct OLED *oled, const uint16_t x, const uint16_t y1,
                  const uint16_t y2, enum OLED_COLOR color)
 {
 	if (!OLED_range_isok (oled, x, 0, y1, y2))
@@ -110,9 +112,10 @@ OLED_draw_vline (struct OLED* oled, const uint16_t x, const uint16_t y1,
 			                             >> (0x07 - (ye & 0x07))));
 
 			if (color)
-				((uint8_t**)oled->_Gbuf)[spage][x] |= bits;
+				(oled->_Gbuf)[spage * oled->x_len + x] |= bits;
 			else
-				((uint8_t**)oled->_Gbuf)[spage][x] &= ~bits;
+				(oled->_Gbuf)[spage * oled->x_len + x]
+				    &= ~bits;
 		}
 	else
 		{
@@ -129,8 +132,7 @@ OLED_draw_vline (struct OLED* oled, const uint16_t x, const uint16_t y1,
 					for (uint16_t i = spage + 1; i < epage;
 					     ++i)
 						(oled->_Gbuf)[i * oled->x_len
-						              + x]
-						    = 0xFF;
+						              + x] = 0xFF;
 				}
 			else
 				{
@@ -142,8 +144,7 @@ OLED_draw_vline (struct OLED* oled, const uint16_t x, const uint16_t y1,
 					for (uint16_t i = spage + 1; i < epage;
 					     ++i)
 						(oled->_Gbuf)[i * oled->x_len
-						              + x]
-						    = 0x00;
+						              + x] = 0x00;
 				}
 		}
 
@@ -151,7 +152,7 @@ OLED_draw_vline (struct OLED* oled, const uint16_t x, const uint16_t y1,
 }
 
 static inline const int
-OLED_draw_hline (struct OLED* oled, const uint16_t x1, const uint16_t x2,
+OLED_draw_hline (struct OLED *oled, const uint16_t x1, const uint16_t x2,
                  const uint16_t y, enum OLED_COLOR color)
 {
 	if (!OLED_range_isok (oled, x1, x2, y, 0))
@@ -175,7 +176,7 @@ OLED_draw_hline (struct OLED* oled, const uint16_t x1, const uint16_t x2,
 }
 
 static inline const int
-OLED_draw_rect (struct OLED* oled, const uint16_t x1, const uint16_t y1,
+OLED_draw_rect (struct OLED *oled, const uint16_t x1, const uint16_t y1,
                 const uint16_t x2, const uint16_t y2, enum OLED_COLOR color)
 {
 	if (!OLED_range_isok (oled, x1, x2, y1, y2))
@@ -190,7 +191,7 @@ OLED_draw_rect (struct OLED* oled, const uint16_t x1, const uint16_t y1,
 }
 
 static inline const int
-OLED_fill_rect (struct OLED* oled, const uint16_t x1, const uint16_t y1,
+OLED_fill_rect (struct OLED *oled, const uint16_t x1, const uint16_t y1,
                 const uint16_t x2, const uint16_t y2, enum OLED_COLOR color)
 {
 	if (!OLED_range_isok (oled, x1, x2, y1, y2))
@@ -203,17 +204,17 @@ OLED_fill_rect (struct OLED* oled, const uint16_t x1, const uint16_t y1,
 	return 1;
 }
 
-static inline const int
-OLED_putc (struct OLED* oled, char c, const uint16_t x, const uint16_t y,
+static inline const char
+OLED_putc (struct OLED *oled, char c, const uint16_t x, const uint16_t y,
            const uint8_t font_size)
 {
 	if (!OLED_range_isok (oled, x, 0, y, 0))
-		return 0;
+		return -1;
 
 	if (c == '\0' || c == '\n')
 		return c;
 
-	const uint8_t* glyph;
+	const uint8_t *glyph;
 	uint8_t        pages = 1;
 	uint8_t        cols  = 6;
 	switch (font_size)
@@ -228,25 +229,25 @@ OLED_putc (struct OLED* oled, char c, const uint16_t x, const uint16_t y,
 			glyph = &char_8x16[0][0];
 			break;
 		case 16:
-			pages = 2;
+			pages = 4;
 			cols  = 16;
-			glyph = &char_16x16[0][0];
+			glyph = &char_16x32[0][0];
 			break;
 		}
 
-	uint16_t page_idx = (y >> 3) * oled->x_len;
-	uint16_t xs       = x;
+	uint16_t page_base = (y >> 3) * oled->x_len;
+	uint16_t xs        = x;
 	if (x >= (oled->x_len - cols))
 		{
-			page_idx += pages * 8;
-			if (page_idx >= oled->y_len)
-				return 0;
+			page_base += pages * 8;
 			xs = 0;
 		}
+	if (page_base >= (oled->y_len >> 3))
+		page_base = 0;
 
 	for (uint16_t i = 0; i < pages; ++i)
 		{
-			page_idx += i * pages * 8;
+			uint16_t page_idx = page_base + i * pages * 8;
 			for (uint16_t j = 0; j < cols; ++j)
 				oled->_Gbuf[page_idx + j + x]
 				    = glyph[j + i * cols];
@@ -255,14 +256,14 @@ OLED_putc (struct OLED* oled, char c, const uint16_t x, const uint16_t y,
 	return c;
 }
 
-static inline const uint8_t*
-OLED_puts (struct OLED* oled, const uint8_t* s, const uint16_t x,
+static inline const char *
+OLED_puts (struct OLED *oled, const char *s, const uint16_t x,
            const uint16_t y, const uint8_t font_size)
 {
 	if (!OLED_range_isok (oled, x, 0, y, 0))
 		return 0;
 
-	const uint8_t* font;
+	const uint8_t *font;
 	uint8_t        pages = 1;
 	uint8_t        cols  = 6;
 	switch (font_size)
@@ -277,9 +278,9 @@ OLED_puts (struct OLED* oled, const uint8_t* s, const uint16_t x,
 			font  = &char_8x16[0][0];
 			break;
 		case 16:
-			pages = 2;
+			pages = 4;
 			cols  = 16;
-			font  = &char_16x16[0][0];
+			font  = &char_16x32[0][0];
 			break;
 		}
 
@@ -303,12 +304,13 @@ OLED_puts (struct OLED* oled, const uint8_t* s, const uint16_t x,
 					xs = 0;
 				}
 
-			const uint16_t cidx     = (*s - ' ') * cols * pages;
-			uint16_t       page_idx = (ys >> 3) * oled->x_len;
+			const uint16_t cidx      = (*s - ' ') * cols * pages;
+			const uint16_t page_base = (ys >> 3) * oled->x_len;
 
 			for (uint16_t i = 0; i < pages; ++i)
 				{
-					page_idx += i * oled->x_len;
+					uint16_t page_idx
+					    = page_base + i * oled->x_len;
 					for (uint16_t j = 0; j < cols; ++j)
 						oled->_Gbuf[page_idx + j + xs]
 						    = font[cidx + j

@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/build/Debug",
+  "command": "/usr/bin/cc  -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Core/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Driver/Inc -I/usr/include/SDL2 -g -std=gnu11 -o CMakeFiles/Simulator.dir/Core/Src/sim_main.c.o -c /home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Core/Src/sim_main.c",
+  "file": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Core/Src/sim_main.c",
+  "output": "CMakeFiles/Simulator.dir/Core/Src/sim_main.c.o"
+},
+{
+  "directory": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/build/Debug",
+  "command": "/usr/bin/cc  -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Core/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Driver/Inc -I/usr/include/SDL2 -g -std=gnu11 -o CMakeFiles/Simulator.dir/Core/Src/sim_screen.c.o -c /home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Core/Src/sim_screen.c",
+  "file": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Core/Src/sim_screen.c",
+  "output": "CMakeFiles/Simulator.dir/Core/Src/sim_screen.c.o"
+},
+{
+  "directory": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/build/Debug",
+  "command": "/usr/bin/cc  -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Core/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Driver/Inc -I/usr/include/SDL2 -g -std=gnu11 -o CMakeFiles/Simulator.dir/Driver/Src/char_16x32.c.o -c /home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Driver/Src/char_16x32.c",
+  "file": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Driver/Src/char_16x32.c",
+  "output": "CMakeFiles/Simulator.dir/Driver/Src/char_16x32.c.o"
+},
+{
+  "directory": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/build/Debug",
+  "command": "/usr/bin/cc  -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Core/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Driver/Inc -I/usr/include/SDL2 -g -std=gnu11 -o CMakeFiles/Simulator.dir/Driver/Src/char_6x8.c.o -c /home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Driver/Src/char_6x8.c",
+  "file": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Driver/Src/char_6x8.c",
+  "output": "CMakeFiles/Simulator.dir/Driver/Src/char_6x8.c.o"
+},
+{
+  "directory": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/build/Debug",
+  "command": "/usr/bin/cc  -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Core/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Driver/Inc -I/usr/include/SDL2 -g -std=gnu11 -o CMakeFiles/Simulator.dir/Driver/Src/char_8x16.c.o -c /home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Driver/Src/char_8x16.c",
+  "file": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Driver/Src/char_8x16.c",
+  "output": "CMakeFiles/Simulator.dir/Driver/Src/char_8x16.c.o"
+}
+]

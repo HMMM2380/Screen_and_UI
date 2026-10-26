@@ -4,21 +4,23 @@
 #include <string.h>
 
 void
-OLED_lCUI_progress_bar_init (struct OLED*                   oled,
-                             struct OLED_lCUI_progress_bar* pg_b,
+OLED_lCUI_progress_bar_init (struct OLED                   *oled,
+                             struct OLED_lCUI_progress_bar *pg_b,
                              const uint16_t x1, const uint16_t y1,
                              const uint16_t x2, const uint16_t y2,
                              enum OLED_COLOR color)
 {
 	if (!oled || !pg_b || !OLED_range_isok (oled, x1, x2, y1, y2))
 		return;
+
 	const struct OLED_lCUI_progress_bar pb = { .progress = 0,
-		                                   .color    = color,
-		                                   .xs   = (x1 < x2 ? x1 : x2),
-		                                   .xe   = (x1 > x2 ? x1 : x2),
-		                                   .ys   = (y1 < y2 ? y1 : y2),
-		                                   .ye   = (y1 > y2 ? y1 : y2),
-		                                   .oled = oled };
+	                                           .color    = color,
+	                                           .xs   = (x1 < x2 ? x1 : x2),
+	                                           .xe   = (x1 > x2 ? x1 : x2),
+	                                           .ys   = (y1 < y2 ? y1 : y2),
+	                                           .ye   = (y1 > y2 ? y1 : y2),
+	                                           .oled = oled };
+
 	memcpy (pg_b, &pb, sizeof (struct OLED_lCUI_progress_bar));
 	pg_b->px = pb.xs;
 
@@ -26,7 +28,7 @@ OLED_lCUI_progress_bar_init (struct OLED*                   oled,
 }
 
 void
-OLED_lCUI_progress_bar_update (struct OLED_lCUI_progress_bar* pg_b,
+OLED_lCUI_progress_bar_update (struct OLED_lCUI_progress_bar *pg_b,
                                uint8_t                        progress)
 {
 	if (!pg_b || progress > 100)
@@ -35,7 +37,7 @@ OLED_lCUI_progress_bar_update (struct OLED_lCUI_progress_bar* pg_b,
 }
 
 void
-OLED_lCUI_progress_bar_destroy (struct OLED_lCUI_progress_bar* pg_b)
+OLED_lCUI_progress_bar_destroy (struct OLED_lCUI_progress_bar *pg_b)
 {
 	if (!pg_b)
 		return;
@@ -43,7 +45,7 @@ OLED_lCUI_progress_bar_destroy (struct OLED_lCUI_progress_bar* pg_b)
 }
 
 void
-OLED_lCUI_progress_bar_cb (void* pg_b)
+OLED_lCUI_progress_bar_cb (void *pg_b)
 {
 	if (!pg_b)
 		return;
@@ -54,12 +56,12 @@ OLED_lCUI_progress_bar_cb (void* pg_b)
 	const uint16_t bar_len = b.xe - b.xs;
 	if (b.progress == 100)
 		OLED_lCUI_progress_bar_destroy (
-		    (struct OLED_lCUI_progress_bar*)pg_b /* destroy the bar */
+		    (struct OLED_lCUI_progress_bar *)pg_b /* destroy the bar */
 		);
 
 	const uint16_t new_px = b.progress * bar_len / 100;
 	OLED_fill_rect (b.oled, b.px, b.ys, new_px, b.ye, b.color);
 
 	b.px += new_px;
-	((struct OLED_lCUI_progress_bar*)pg_b)->px = b.px;
+	((struct OLED_lCUI_progress_bar *)pg_b)->px = b.px;
 }

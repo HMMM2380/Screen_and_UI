@@ -1,0 +1,11 @@
+BasedOnStyle: GNU
+IndentWidth: 8
+TabWidth: 8
+UseTab: ForIndentation
+
+IndentExternBlock: NoIndent
+
+AlignConsecutiveMacros: Consecutive
+AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveBitFields: Consecutive
+AlignConsecutiveDeclarations: Consecutive

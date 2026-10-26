@@ -7,7 +7,7 @@
  * diguts_size: 6x8, {len(char_list)}, 1 pages x 6 cols
  */
 extern const uint8_t char_6x8[95][6];
-extern const uint8_t char_8x16[95][6];
-extern const uint8_t char_16x16[95][6];
+extern const uint8_t char_8x16[95][16];
+extern const uint8_t char_16x32[95][64];
 
 #endif

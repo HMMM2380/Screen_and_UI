@@ -1,0 +1,37 @@
+{
+  "terminal.integrated.fontFamily": "'Agave Nerd Font Mono Bold'",
+  "terminal.integrated.fontWeight": "bold",
+  "terminal.integrated.fontSize": 20,
+
+  "editor.fontSize": 22,
+  "editor.fontFamily": "'Agave Nerd Font Mono Bold'",
+  "editor.fontWeight": "bold",
+
+  "bashIde.path": "bash-language-server",
+  "bashIde.shellcheckPath": "shellcheck",
+  "bashIde.shfmtPath": "shfmt",
+
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+
+  "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[vue]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+  "[c]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "[cpp]": {
+    "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+  },
+  "[shellscript]": {
+    "editor.defaultFormatter": "mads-hartmann.bash-ide-vscode"
+  },
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.prettier": "explicit",
+    "source.fixAll.eslint": "explicit"
+  }
+}

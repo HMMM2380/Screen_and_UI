@@ -1,0 +1,3 @@
+/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug/CMakeFiles/Screen_and_UI.dir
+/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug/CMakeFiles/edit_cache.dir
+/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug/CMakeFiles/rebuild_cache.dir
