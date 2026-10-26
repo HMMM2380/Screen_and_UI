@@ -6,17 +6,17 @@ function __tools_completion {
 	local cur="${COMP_WORDS[COMP_CWORD]}"
 
 	if [[ $COMP_CWORD -eq 1 ]]; then
-		COMPREPLY=($(compgen -W "build clean flash" -- "$cur"))
+		COMPREPLY=($(compgen -W "config build clean flash" -- "$cur"))
 		return 0
 	fi
 
 	if [[ $COMP_CWORD -eq 2 ]]; then
 		case "${COMP_WORDS[1]}" in
-		build)
+		config)
 			COMPREPLY=($(compgen -W "Debug Release" -- "$cur"))
 			;;
 
-		config)
+		build)
 			COMPREPLY=($(compgen -W "Debug Release" -- "$cur"))
 			;;
 

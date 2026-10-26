@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug/cmake_install.cmake",
-		"/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug/Simulator/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
