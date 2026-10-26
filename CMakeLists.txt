@@ -24,7 +24,7 @@ add_library(screen_ui_core STATIC
 
 target_include_directories(screen_ui_core PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/Drivers/Inc
-    ${CMAKE_CURRENT_SOURCE_DIR}/fonts/
+    ${CMAKE_CURRENT_SOURCE_DIR}/fonts
     ${CMAKE_CURRENT_SOURCE_DIR}/UI/Inc
     ${CMAKE_CURRENT_SOURCE_DIR}/Libc/DataStruct/Inc
 )
