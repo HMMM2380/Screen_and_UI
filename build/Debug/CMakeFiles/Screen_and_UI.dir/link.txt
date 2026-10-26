@@ -1,1 +1,0 @@
-/usr/bin/cc -g -Wl,--dependency-file=CMakeFiles/Screen_and_UI.dir/link.d CMakeFiles/Screen_and_UI.dir/UI/Src/OLED_lCUI.c.o CMakeFiles/Screen_and_UI.dir/fonts/char_16x32.c.o CMakeFiles/Screen_and_UI.dir/fonts/char_6x8.c.o CMakeFiles/Screen_and_UI.dir/fonts/char_8x16.c.o -o Screen_and_UI

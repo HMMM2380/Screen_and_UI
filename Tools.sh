@@ -2,10 +2,6 @@
 
 cmake=${cmake:-cmake}
 
-OCD=/home/hmmm_fedora/Workspace/Code/MCU/ARM/AT32/OpenOCD_Linux_x86-64_V2.0.8
-
-PjctName="$(basename "$PWD")"
-
 function __tools_completion {
 	local cur="${COMP_WORDS[COMP_CWORD]}"
 
@@ -17,6 +13,10 @@ function __tools_completion {
 	if [[ $COMP_CWORD -eq 2 ]]; then
 		case "${COMP_WORDS[1]}" in
 		build)
+			COMPREPLY=($(compgen -W "Debug Release" -- "$cur"))
+			;;
+
+		config)
 			COMPREPLY=($(compgen -W "Debug Release" -- "$cur"))
 			;;
 
@@ -42,12 +42,8 @@ if [[ "${BASH_SOURCE[0]}" != "${0}" ]]; then
 	return 0 2>/dev/null || true
 fi
 
-function flash {
-	"${OCD}/bin/openocd" \
-		-s "${OCD}/scripts" \
-		-f "${OCD}/scripts/interface/cmsis-dap.cfg" \
-		-f "${OCD}/scripts/target/at32f421xx.cfg" \
-		-c "program ./build/$1/${PjctName}.hex verify reset exit"
+function config {
+	${cmake} "--preset" "$1"
 }
 
 function build {
@@ -74,12 +70,13 @@ build)
 	fi
 	build "$2"
 	;;
-flash)
+
+config)
 	if [[ $# -lt 2 ]]; then
-		echo "Usage: $0 flash <preset>" >&2
+		echo "Usage: $0 config <preset>" >&2
 		exit 1
 	fi
-	flash "$2"
+	config "$2"
 	;;
 
 clean)
