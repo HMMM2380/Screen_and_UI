@@ -1,0 +1,2 @@
+/usr/bin/ar qc libscreen_ui_core.a CMakeFiles/screen_ui_core.dir/UI/Src/OLED_lCUI.c.o CMakeFiles/screen_ui_core.dir/fonts/char_16x32.c.o CMakeFiles/screen_ui_core.dir/fonts/char_6x8.c.o CMakeFiles/screen_ui_core.dir/fonts/char_8x16.c.o
+/usr/bin/ranlib libscreen_ui_core.a

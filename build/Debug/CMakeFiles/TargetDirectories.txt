@@ -1,0 +1,6 @@
+/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug/CMakeFiles/screen_ui_core.dir
+/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug/CMakeFiles/edit_cache.dir
+/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug/CMakeFiles/rebuild_cache.dir
+/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug/Simulator/CMakeFiles/Simulator.dir
+/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug/Simulator/CMakeFiles/edit_cache.dir
+/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug/Simulator/CMakeFiles/rebuild_cache.dir

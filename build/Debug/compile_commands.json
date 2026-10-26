@@ -1,0 +1,38 @@
+[
+{
+  "directory": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug",
+  "command": "/usr/bin/cc  -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Drivers/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/fonts -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/UI/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Libc/DataStruct/Inc -g -std=gnu17 -o CMakeFiles/screen_ui_core.dir/UI/Src/OLED_lCUI.c.o -c /home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/UI/Src/OLED_lCUI.c",
+  "file": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/UI/Src/OLED_lCUI.c",
+  "output": "CMakeFiles/screen_ui_core.dir/UI/Src/OLED_lCUI.c.o"
+},
+{
+  "directory": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug",
+  "command": "/usr/bin/cc  -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Drivers/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/fonts -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/UI/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Libc/DataStruct/Inc -g -std=gnu17 -o CMakeFiles/screen_ui_core.dir/fonts/char_16x32.c.o -c /home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/fonts/char_16x32.c",
+  "file": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/fonts/char_16x32.c",
+  "output": "CMakeFiles/screen_ui_core.dir/fonts/char_16x32.c.o"
+},
+{
+  "directory": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug",
+  "command": "/usr/bin/cc  -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Drivers/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/fonts -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/UI/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Libc/DataStruct/Inc -g -std=gnu17 -o CMakeFiles/screen_ui_core.dir/fonts/char_6x8.c.o -c /home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/fonts/char_6x8.c",
+  "file": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/fonts/char_6x8.c",
+  "output": "CMakeFiles/screen_ui_core.dir/fonts/char_6x8.c.o"
+},
+{
+  "directory": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug",
+  "command": "/usr/bin/cc  -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Drivers/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/fonts -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/UI/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Libc/DataStruct/Inc -g -std=gnu17 -o CMakeFiles/screen_ui_core.dir/fonts/char_8x16.c.o -c /home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/fonts/char_8x16.c",
+  "file": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/fonts/char_8x16.c",
+  "output": "CMakeFiles/screen_ui_core.dir/fonts/char_8x16.c.o"
+},
+{
+  "directory": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug/Simulator",
+  "command": "/usr/bin/cc  -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Core/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Drivers/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/fonts -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/UI/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Libc/DataStruct/Inc -isystem /usr/include/SDL2 -g -std=gnu17 -D_GNU_SOURCE=1 -D_REENTRANT -o CMakeFiles/Simulator.dir/Core/Src/sim_main.c.o -c /home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Core/Src/sim_main.c",
+  "file": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Core/Src/sim_main.c",
+  "output": "Simulator/CMakeFiles/Simulator.dir/Core/Src/sim_main.c.o"
+},
+{
+  "directory": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/build/Debug/Simulator",
+  "command": "/usr/bin/cc  -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Core/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Drivers/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/fonts -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/UI/Inc -I/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Libc/DataStruct/Inc -isystem /usr/include/SDL2 -g -std=gnu17 -D_GNU_SOURCE=1 -D_REENTRANT -o CMakeFiles/Simulator.dir/Core/Src/sim_screen.c.o -c /home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Core/Src/sim_screen.c",
+  "file": "/home/hmmm_fedora/Workspace/Code/MCU/Pool/Libc/Drivers/Screen_and_UI/Simulator/Core/Src/sim_screen.c",
+  "output": "Simulator/CMakeFiles/Simulator.dir/Core/Src/sim_screen.c.o"
+}
+]
